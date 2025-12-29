@@ -1,0 +1,162 @@
+import { motion } from 'framer-motion';
+import { Download, Mail, Linkedin, Github } from 'lucide-react';
+import TypeWriter from './TypeWriter';
+import CodeSnippet from './CodeSnippet';
+import profilePhoto from '@/assets/profile-photo.png';
+
+const HeroSection = () => {
+  const roles = ['Innovator', 'AI Enthusiast', 'Researcher', 'IoT Engineer', 'CS Engineer'];
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="z-10"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block mb-4"
+            >
+              <span className="px-4 py-2 rounded-full border border-primary/50 text-primary text-sm font-medium bg-primary/10">
+                HELLO, I'M
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-5xl md:text-7xl font-orbitron font-bold mb-4"
+            >
+              <span className="text-gradient">Shubham</span>
+              <br />
+              <span className="text-foreground">Dahatonde</span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-2xl md:text-3xl mb-6 font-rajdhani"
+            >
+              I am a <TypeWriter words={roles} />
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-muted-foreground text-lg max-w-xl mb-8 leading-relaxed"
+            >
+              Results-driven professional with expertise in IoT, AI, and healthcare technologies.
+              Specializing in patent-backed innovations and AI-integrated research for ISRO and beyond.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-4 mb-8"
+            >
+              <motion.a 
+                href="/CV_Shubham_Dahatonde.pdf" 
+                download 
+                className="btn-primary inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px hsl(var(--primary) / 0.5)' }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download size={20} />
+                Download Resume
+              </motion.a>
+              <motion.a 
+                href="#projects" 
+                className="btn-outline"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Work
+              </motion.a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex gap-4"
+            >
+              <motion.a
+                href="mailto:shubham2262v@gmail.com"
+                className="w-12 h-12 rounded-full border border-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Mail size={20} />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/shubham"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full border border-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Linkedin size={20} />
+              </motion.a>
+              <motion.a
+                href="https://github.com/shubham"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full border border-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Github size={20} />
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex justify-center items-center"
+          >
+            {/* Glowing circle border */}
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-spin" style={{ padding: '4px', animationDuration: '8s' }}>
+                <div className="w-full h-full rounded-full bg-background" />
+              </div>
+              
+              {/* Profile image */}
+              <motion.div 
+                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/50 animate-glow-pulse"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src={profilePhoto}
+                  alt="Shubham Dahatonde"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+            </div>
+
+            {/* Code snippet - positioned below profile */}
+            <CodeSnippet />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
