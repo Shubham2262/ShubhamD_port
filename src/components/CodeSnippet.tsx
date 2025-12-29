@@ -36,7 +36,7 @@ const CodeSnippet = () => {
       initial={{ opacity: 0, x: 50, rotateX: 20, rotateY: -15 }}
       animate={{ opacity: 1, x: 0, rotateX: 15, rotateY: -10 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="absolute z-50 transform-gpu -bottom-10 -right-4 w-[300px] md:left-auto md:translate-x-0 md:-bottom-32 md:-right-8 md:max-w-none md:w-[420px]"
+      className="absolute z-50 transform-gpu -bottom-60 -right-4 w-[300px] md:left-auto md:translate-x-0 md:-bottom-32 md:-right-8 md:max-w-none md:w-[420px]"
     >
       <div className="card-glass rounded-xl overflow-hidden shadow-2xl shadow-primary/20 backdrop-blur-xl border border-primary/20">
         {/* Window header */}
