@@ -127,7 +127,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center items-center mb-24 md:mb-0"
+            className="relative flex justify-center items-center mb-56 md:mb-0"
           >
             {/* Creative Profile Border System */}
             <div className="relative z-10">
