@@ -27,7 +27,7 @@ const CodeSnippet = () => {
   return (
     <motion.div
       ref={containerRef}
-      style={{ 
+      style={{
         y,
         rotateX,
         rotateY,
@@ -36,21 +36,21 @@ const CodeSnippet = () => {
       initial={{ opacity: 0, x: 50, rotateX: 20, rotateY: -15 }}
       animate={{ opacity: 1, x: 0, rotateX: 15, rotateY: -10 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="absolute -bottom-24 right-0 md:right-8 lg:right-0 w-[300px] md:w-[380px] transform-gpu"
+      className="absolute -bottom-32 -right-8 z-50 w-[320px] md:w-[420px] transform-gpu"
     >
       <div className="card-glass rounded-xl overflow-hidden shadow-2xl shadow-primary/20 backdrop-blur-xl border border-primary/20">
         {/* Window header */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50 bg-card/80">
           <div className="flex gap-1.5">
-            <motion.div 
+            <motion.div
               className="w-3 h-3 rounded-full bg-red-500"
               whileHover={{ scale: 1.2 }}
             />
-            <motion.div 
+            <motion.div
               className="w-3 h-3 rounded-full bg-yellow-500"
               whileHover={{ scale: 1.2 }}
             />
-            <motion.div 
+            <motion.div
               className="w-3 h-3 rounded-full bg-green-500"
               whileHover={{ scale: 1.2 }}
             />
@@ -59,12 +59,12 @@ const CodeSnippet = () => {
         </div>
 
         {/* Code content with infinite scroll effect */}
-        <div className="p-4 font-mono text-sm max-h-[200px] overflow-hidden relative">
+        <div className="p-4 font-mono text-sm max-h-[280px] overflow-hidden relative">
           <motion.div
             animate={{ y: [0, -200] }}
-            transition={{ 
-              duration: 10, 
-              repeat: Infinity, 
+            transition={{
+              duration: 10,
+              repeat: Infinity,
               ease: "linear",
               repeatType: "loop"
             }}
@@ -82,7 +82,7 @@ const CodeSnippet = () => {
               </motion.div>
             ))}
           </motion.div>
-          
+
           {/* Gradient overlay for smooth scroll effect */}
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-card to-transparent pointer-events-none" />
           <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-card to-transparent pointer-events-none" />

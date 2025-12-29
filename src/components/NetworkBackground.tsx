@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 function FloatingParticles() {
   const ref = useRef<THREE.Points>(null);
-  
+
   const particlesCount = 3000;
   const positions = useMemo(() => {
     const pos = new Float32Array(particlesCount * 3);
@@ -40,7 +40,7 @@ function FloatingParticles() {
 
 function GlowingSphere({ position, color, scale }: { position: [number, number, number]; color: string; scale: number }) {
   const ref = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (ref.current) {
       ref.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.5 + position[0]) * 0.5;
@@ -59,7 +59,7 @@ function GlowingSphere({ position, color, scale }: { position: [number, number, 
 
 function FloatingTorus({ position }: { position: [number, number, number] }) {
   const ref = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (ref.current) {
       ref.current.rotation.x = state.clock.elapsedTime * 0.2;
@@ -77,7 +77,7 @@ function FloatingTorus({ position }: { position: [number, number, number] }) {
 
 function GridPlane() {
   const ref = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (ref.current) {
       ref.current.position.z = (state.clock.elapsedTime * 0.5) % 2;
@@ -85,9 +85,9 @@ function GridPlane() {
   });
 
   return (
-    <gridHelper 
-      args={[50, 50, '#00e6e6', '#1a1a3e']} 
-      rotation={[Math.PI / 2, 0, 0]} 
+    <gridHelper
+      args={[50, 50, '#00e6e6', '#1a1a3e']}
+      rotation={[Math.PI / 2, 0, 0]}
       position={[0, -5, 0]}
     />
   );
@@ -99,18 +99,18 @@ function Scene() {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={1} color="#00e6e6" />
       <pointLight position={[-10, -10, -10]} intensity={0.5} color="#b464ff" />
-      
+
       <FloatingParticles />
-      
+
       <GlowingSphere position={[-4, 2, -5]} color="#00e6e6" scale={1.2} />
       <GlowingSphere position={[4, -2, -8]} color="#b464ff" scale={0.8} />
       <GlowingSphere position={[0, 3, -10]} color="#00e6e6" scale={1.5} />
-      
+
       <FloatingTorus position={[3, 1, -6]} />
       <FloatingTorus position={[-3, -1, -4]} />
-      
-      <GridPlane />
-      
+
+
+
       <fog attach="fog" args={['#080c15', 5, 30]} />
     </>
   );
@@ -119,7 +119,7 @@ function Scene() {
 const NetworkBackground = () => {
   return (
     <div className="fixed inset-0 z-0" style={{ background: 'linear-gradient(180deg, hsl(222 47% 3%) 0%, hsl(222 47% 8%) 50%, hsl(260 40% 10%) 100%)' }}>
-      <Canvas 
+      <Canvas
         camera={{ position: [0, 0, 8], fov: 60 }}
         gl={{ antialias: true, alpha: true }}
       >
