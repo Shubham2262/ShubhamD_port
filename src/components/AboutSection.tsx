@@ -20,9 +20,10 @@ const coreSkills = [
 ];
 
 const achievements = [
-  "Dean's Excellence in Research 2025",
-  "Dean's Excellence in Innovation 2024",
-  "1st Place - Smart India Hackathon",
+  " Excellence in Research 2025",
+  " Excellence in Innovation 2024",
+  "TOP 3 MUJACM ELICIT Project Expo",
+  "And many more..."
 ];
 
 const AboutSection = () => {
