@@ -53,12 +53,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         cyan: {
-          DEFAULT: "hsl(186 100% 50%)",
-          glow: "hsl(186 100% 60%)",
+          DEFAULT: "hsl(190 100% 50%)",
+          glow: "hsl(190 100% 60%)",
         },
         purple: {
-          DEFAULT: "hsl(280 100% 60%)",
-          glow: "hsl(280 100% 70%)",
+          DEFAULT: "hsl(14 100% 57%)",
+          glow: "hsl(14 100% 67%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -102,8 +102,8 @@ export default {
           to: { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(186 100% 50% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(186 100% 50% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(190 100% 50% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(190 100% 50% / 0.6)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },

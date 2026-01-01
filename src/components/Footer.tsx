@@ -129,8 +129,8 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground">
-                <div className="flex items-center gap-1.5 text-green-400">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 text-primary">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   <span>Open to Work</span>
                 </div>
                 <span className="w-px h-3 bg-border" />
@@ -149,7 +149,7 @@ const Footer = () => {
             <span>© {currentYear} Shubham Dahatonde.</span>
             <span className="hidden md:inline text-border">|</span>
             <span className="flex items-center gap-1">
-              Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 animate-pulse" /> in India
+              Made with <Heart className="w-3.5 h-3.5 text-accent fill-accent animate-pulse" /> in India
             </span>
             <span className="hidden md:inline text-border">|</span>
             <span>All rights reserved.</span>

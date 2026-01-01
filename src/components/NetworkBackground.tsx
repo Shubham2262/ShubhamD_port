@@ -28,7 +28,7 @@ function FloatingParticles() {
     <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#00e6e6"
+        color="#00D4FF"
         size={0.03}
         sizeAttenuation={true}
         depthWrite={false}
@@ -70,7 +70,7 @@ function FloatingTorus({ position }: { position: [number, number, number] }) {
   return (
     <mesh ref={ref} position={position}>
       <torusGeometry args={[1.5, 0.05, 16, 100]} />
-      <meshBasicMaterial color="#b464ff" transparent opacity={0.4} />
+      <meshBasicMaterial color="#FF5722" transparent opacity={0.4} />
     </mesh>
   );
 }
@@ -86,7 +86,7 @@ function GridPlane() {
 
   return (
     <gridHelper
-      args={[50, 50, '#00e6e6', '#1a1a3e']}
+      args={[50, 50, '#00D4FF', '#1a1a3e']}
       rotation={[Math.PI / 2, 0, 0]}
       position={[0, -5, 0]}
     />
@@ -97,14 +97,14 @@ function Scene() {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#00e6e6" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#b464ff" />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#00D4FF" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#FF5722" />
 
       <FloatingParticles />
 
-      <GlowingSphere position={[-4, 2, -5]} color="#00e6e6" scale={1.2} />
-      <GlowingSphere position={[4, -2, -8]} color="#b464ff" scale={0.8} />
-      <GlowingSphere position={[0, 3, -10]} color="#00e6e6" scale={1.5} />
+      <GlowingSphere position={[-4, 2, -5]} color="#00D4FF" scale={1.2} />
+      <GlowingSphere position={[4, -2, -8]} color="#FF5722" scale={0.8} />
+      <GlowingSphere position={[0, 3, -10]} color="#FFC107" scale={1.5} />
 
       <FloatingTorus position={[3, 1, -6]} />
       <FloatingTorus position={[-3, -1, -4]} />
@@ -118,7 +118,7 @@ function Scene() {
 
 const NetworkBackground = () => {
   return (
-    <div className="fixed inset-0 z-0" style={{ background: 'linear-gradient(180deg, hsl(222 47% 3%) 0%, hsl(222 47% 8%) 50%, hsl(260 40% 10%) 100%)' }}>
+    <div className="fixed inset-0 z-0" style={{ background: 'linear-gradient(180deg, hsl(240 30% 2%) 0%, hsl(240 30% 6%) 50%, hsl(14 30% 5%) 100%)' }}>
       <Canvas
         camera={{ position: [0, 0, 8], fov: 60 }}
         gl={{ antialias: true, alpha: true }}

@@ -36,21 +36,21 @@ const positions = [
     organization: 'ICICV-24 International Conference',
     period: 'Feb 2024 - Apr 2024',
     desc: 'Led the organization of Springer-sponsored international conference',
-    color: 'from-cyan-500 to-blue-500',
+    color: 'from-primary to-secondary',
   },
   {
     title: 'Technical Secretary',
     organization: 'Turing Sapiens Club, MUJ',
     period: 'June 2023 - May 2024',
     desc: 'Organized workshops and technical events',
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-secondary to-accent',
   },
   {
     title: 'Head of Projects & Research',
     organization: 'MUJ ACM SigAI Chapter',
     period: 'Dec 2022 - May 2023',
     desc: 'Led stress detection system development using ECG signals',
-    color: 'from-orange-500 to-red-500',
+    color: 'from-accent to-primary',
   },
 ];
 
@@ -58,12 +58,12 @@ const ExperienceSection = () => {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
-  
+
   const lineHeight = useTransform(scrollYProgress, [0, 0.5], ['0%', '100%']);
 
   return (
@@ -73,7 +73,7 @@ const ExperienceSection = () => {
         <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="absolute top-2/3 right-0 w-1/3 h-px bg-gradient-to-l from-transparent via-secondary/30 to-transparent" />
       </div>
-      
+
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -81,7 +81,7 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.div 
+          <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/30 mb-6"
             whileHover={{ scale: 1.05 }}
           >
@@ -98,7 +98,7 @@ const ExperienceSection = () => {
         <div className="relative mb-20">
           {/* Animated timeline line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-muted/30 rounded-full overflow-hidden">
-            <motion.div 
+            <motion.div
               className="w-full bg-gradient-to-b from-primary via-secondary to-primary"
               style={{ height: lineHeight }}
             />
@@ -111,12 +111,11 @@ const ExperienceSection = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.2, type: "spring" }}
-                className={`relative flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`relative flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Timeline dot */}
-                <motion.div 
+                <motion.div
                   className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-20"
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
@@ -128,16 +127,16 @@ const ExperienceSection = () => {
                 </motion.div>
 
                 {/* Content */}
-                <motion.div 
+                <motion.div
                   className={`w-full md:w-[calc(50%-4rem)] ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="card-glass p-8 rounded-2xl relative overflow-hidden group">
                     {/* Gradient accent */}
                     <div className={`absolute ${index % 2 === 0 ? 'right-0' : 'left-0'} top-0 w-1 h-full bg-gradient-to-b from-primary to-secondary`} />
-                    
+
                     {exp.current && (
-                      <motion.span 
+                      <motion.span
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium mb-4"
                         animate={{ scale: [1, 1.05, 1] }}
                         transition={{ repeat: Infinity, duration: 2 }}
@@ -146,10 +145,10 @@ const ExperienceSection = () => {
                         Current Role
                       </motion.span>
                     )}
-                    
+
                     <h3 className="text-2xl font-orbitron font-bold mb-2 group-hover:text-primary transition-colors">{exp.title}</h3>
                     <h4 className="text-primary font-semibold text-lg mb-4">{exp.company}</h4>
-                    
+
                     <div className={`flex flex-wrap gap-4 text-sm text-muted-foreground mb-6 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                       <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-muted/50">
                         <Calendar size={14} />
@@ -160,11 +159,11 @@ const ExperienceSection = () => {
                         {exp.location}
                       </span>
                     </div>
-                    
+
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
-                        <motion.li 
-                          key={i} 
+                        <motion.li
+                          key={i}
                           className={`text-muted-foreground text-sm flex items-start gap-3 ${index % 2 === 0 ? 'md:flex-row-reverse md:text-right' : ''}`}
                           initial={{ opacity: 0, y: 10 }}
                           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -177,7 +176,7 @@ const ExperienceSection = () => {
                     </ul>
                   </div>
                 </motion.div>
-                
+
                 {/* Empty space for the other side */}
                 <div className="hidden md:block w-[calc(50%-4rem)]" />
               </motion.div>
@@ -207,8 +206,8 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, y: 50, rotateX: 20 }}
               animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.7 + index * 0.1, type: "spring" }}
-              whileHover={{ 
-                y: -15, 
+              whileHover={{
+                y: -15,
                 rotateY: 5,
                 boxShadow: '0 30px 60px hsl(var(--primary) / 0.2)'
               }}
@@ -216,15 +215,15 @@ const ExperienceSection = () => {
             >
               {/* Gradient top bar */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${pos.color}`} />
-              
+
               {/* Number indicator */}
               <div className={`absolute -right-4 -top-4 w-20 h-20 rounded-full bg-gradient-to-br ${pos.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
-              
+
               <div className="relative z-10">
                 <span className="text-6xl font-orbitron font-bold text-muted/20 absolute -top-2 -left-2">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                
+
                 <div className="pt-8">
                   <h4 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">{pos.title}</h4>
                   <p className="text-primary text-sm font-medium mb-2">{pos.organization}</p>

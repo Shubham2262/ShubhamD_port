@@ -4,12 +4,12 @@ import { useRef } from 'react';
 import { GraduationCap, Award, Code2, Brain, Database, Cpu, Sparkles } from 'lucide-react';
 
 const skills = [
-  { name: 'Python', level: 95, color: 'from-cyan-400 to-blue-500' },
-  { name: 'Machine Learning', level: 90, color: 'from-purple-400 to-pink-500' },
-  { name: 'Deep Learning', level: 85, color: 'from-green-400 to-cyan-500' },
-  { name: 'IoT Systems', level: 90, color: 'from-orange-400 to-red-500' },
-  { name: 'JavaScript', level: 80, color: 'from-yellow-400 to-orange-500' },
-  { name: 'SQL', level: 85, color: 'from-blue-400 to-purple-500' },
+  { name: 'Python', level: 95, color: 'from-primary to-secondary' },
+  { name: 'Machine Learning', level: 90, color: 'from-secondary to-accent' },
+  { name: 'Deep Learning', level: 85, color: 'from-accent to-primary' },
+  { name: 'IoT Systems', level: 90, color: 'from-primary to-accent' },
+  { name: 'JavaScript', level: 80, color: 'from-secondary to-primary' },
+  { name: 'SQL', level: 85, color: 'from-accent to-secondary' },
 ];
 
 const coreSkills = [
@@ -29,27 +29,27 @@ const AboutSection = () => {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
-  
+
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
     <section id="about" className="py-24 relative overflow-hidden" ref={containerRef}>
       {/* Floating decorative elements */}
-      <motion.div 
+      <motion.div
         style={{ y }}
         className="absolute top-20 right-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"
       />
-      <motion.div 
+      <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [-50, 50]) }}
         className="absolute bottom-20 left-10 w-48 h-48 rounded-full bg-secondary/5 blur-3xl pointer-events-none"
       />
-      
+
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -57,7 +57,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.div 
+          <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6"
             whileHover={{ scale: 1.05 }}
           >
@@ -80,7 +80,7 @@ const AboutSection = () => {
             className="lg:col-span-7 card-glass rounded-2xl p-8 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full" />
-            
+
             <h3 className="text-2xl font-orbitron font-bold mb-6 flex items-center gap-3">
               <div className="p-2 rounded-xl bg-primary/10">
                 <GraduationCap className="text-primary w-6 h-6" />
@@ -89,7 +89,7 @@ const AboutSection = () => {
             </h3>
 
             <div className="space-y-4">
-              <motion.div 
+              <motion.div
                 className="p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
@@ -98,7 +98,7 @@ const AboutSection = () => {
                 <p className="text-sm text-muted-foreground">Manipal University, Jaipur • 2022-2025</p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
@@ -117,7 +117,7 @@ const AboutSection = () => {
             className="lg:col-span-5 card-glass rounded-2xl p-8 relative overflow-hidden"
           >
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-tl from-secondary/20 to-transparent rounded-full" />
-            
+
             <h3 className="text-2xl font-orbitron font-bold mb-6 flex items-center gap-3">
               <div className="p-2 rounded-xl bg-secondary/10">
                 <Award className="text-secondary w-6 h-6" />
@@ -149,8 +149,8 @@ const AboutSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + i * 0.1, type: "spring" }}
-              whileHover={{ 
-                y: -10, 
+              whileHover={{
+                y: -10,
                 rotateY: 10,
                 boxShadow: '0 20px 40px hsl(var(--primary) / 0.2)'
               }}
@@ -188,7 +188,7 @@ const AboutSection = () => {
                 >
                   <div className="flex justify-between mb-2">
                     <span className="font-medium group-hover:text-primary transition-colors">{skill.name}</span>
-                    <motion.span 
+                    <motion.span
                       className="text-primary font-mono font-bold"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : {}}
