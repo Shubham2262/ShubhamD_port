@@ -93,7 +93,7 @@ const AboutSection = () => {
                 className="p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
-                <h4 className="font-bold text-lg mb-1">B.Tech (Hons) Computer Science</h4>
+                <h4 className="font-bold text-lg mb-1">B.Tech (Hons) Computer Science and Engineering </h4>
                 <p className="text-muted-foreground mb-1">IoT and Intelligent Systems</p>
                 <p className="text-sm text-muted-foreground">Manipal University, Jaipur • 2022-2025</p>
               </motion.div>
@@ -103,7 +103,7 @@ const AboutSection = () => {
                 whileHover={{ x: 10, scale: 1.02 }}
               >
                 <h4 className="font-bold text-lg mb-1">Diploma in Computer Engineering</h4>
-                <p className="text-muted-foreground mb-1">2nd Rank in University</p>
+                <p className="text-muted-foreground mb-1">2nd Ranker</p>
                 <p className="text-sm text-muted-foreground">Viva College, Maharashtra • 2019-2022</p>
               </motion.div>
             </div>

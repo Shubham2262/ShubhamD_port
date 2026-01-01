@@ -24,14 +24,14 @@ const ContactSection = () => {
       color: 'from-secondary to-accent',
       bgColor: 'bg-secondary/10',
     },
-    {
-      icon: Github,
-      label: 'GitHub',
-      value: 'shubham',
-      href: 'https://github.com/shubham',
-      color: 'from-accent to-primary',
-      bgColor: 'bg-accent/10',
-    },
+    // {
+    //   icon: Github,
+    //   label: 'GitHub',
+    //   value: 'shubham',
+    //   href: 'https://github.com/shubham',
+    //   color: 'from-accent to-primary',
+    //   bgColor: 'bg-accent/10',
+    // },
     {
       icon: MapPin,
       label: 'Location',
