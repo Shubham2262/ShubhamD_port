@@ -5,6 +5,18 @@ import { Briefcase, Calendar, MapPin, Rocket, Users } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'Chief Technology Officer (CTO)',
+    company: 'Aayush Surgical Clinic',
+    location: 'India',
+    period: 'Sept 2025 – Current',
+    description: [
+      'Spearheading the technological transformation of the clinic by developing and deploying a full-stack Clinic Management System.',
+      'Overseeing the digital infrastructure, ensuring seamless operations across OPD, billing, and patient management systems.',
+    ],
+    current: true,
+    icon: Briefcase,
+  },
+  {
     title: 'Researcher',
     company: 'Indian Space Research Organization (ISRO)',
     location: 'India',
@@ -13,7 +25,7 @@ const experiences = [
       'Developed Securing Satellite Command Systems using offline voice recognition with authentication to enhance command security.',
       'Built an Automated Minutes-of-Meeting (MOM) System with speaker identification and live transcription for internal meetings.',
     ],
-    current: true,
+    current: false,
     icon: Rocket,
   },
   {
