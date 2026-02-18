@@ -64,7 +64,7 @@ const publications = [
   {
     title: 'An Explainable Hybrid CNN–Vision Transformer Framework for Multiclass Alzheimer’s Disease Classification Using Brain MRI',
     venue: 'Springer',
-    status: 'Published',
+    status: 'Communicated',
     description: 'Proposed a hybrid CNN-Transformer model for enhanced classification of Alzheimer’s stages from MRI scans.',
     icon: '🧠',
     link: '#',
