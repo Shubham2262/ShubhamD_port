@@ -94,6 +94,14 @@ const AboutSection = () => {
                 className="p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
+                <h4 className="font-bold text-lg mb-1">MSc. Artificial Intelligence and Robotics</h4>
+                <p className="text-sm text-muted-foreground">Technische Universität Nürnberg</p>
+              </motion.div>
+
+              <motion.div
+                className="p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all"
+                whileHover={{ x: 10, scale: 1.02 }}
+              >
                 <h4 className="font-bold text-lg mb-1">B.Tech (Hons) Computer Science and Engineering </h4>
                 <p className="text-muted-foreground mb-1">IoT and Intelligent Systems</p>
                 <p className="text-sm text-muted-foreground">Manipal University, Jaipur • 2022-2025</p>
