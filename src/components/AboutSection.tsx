@@ -95,7 +95,7 @@ const AboutSection = () => {
                 whileHover={{ x: 10, scale: 1.02 }}
               >
                 <h4 className="font-bold text-lg mb-1">MSc. Artificial Intelligence and Robotics</h4>
-                <p className="text-sm text-muted-foreground">Technische Universität Nürnberg</p>
+                <p className="text-sm text-muted-foreground">Technische Universität Nürnberg • Oct 2026–Present</p>
               </motion.div>
 
               <motion.div
